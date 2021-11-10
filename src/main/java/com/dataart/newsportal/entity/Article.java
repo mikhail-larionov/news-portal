@@ -8,7 +8,7 @@ import org.springframework.data.relational.core.mapping.Table;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-@Table(value = "ARTICLES")
+@Table(value = "ARTICLE")
 public class Article {
     @Id
     @Column(value = "ID")
@@ -17,5 +17,8 @@ public class Article {
     private String title;
     @Column(value = "CONTENT")
     private String content;
+    @Column(value = "HEADING")
+    private String heading;
+
 
 }

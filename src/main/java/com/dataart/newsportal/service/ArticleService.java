@@ -11,11 +11,10 @@ import java.util.List;
 
 @Service
 public interface ArticleService {
-    ArticleDto getArticleById(Long id);
 
-    Page<ArticleDto> getAllArticles(Pageable page);
+    Page<ArticleDto> getAllArticles(Pageable page, String heading);
 
-    ArticleDto uploadZip(MultipartFile file) throws IOException;
+    ArticleDto uploadZip(MultipartFile file, String heading) throws IOException;
 
     List<ArticleDto> getArticles();
 }
