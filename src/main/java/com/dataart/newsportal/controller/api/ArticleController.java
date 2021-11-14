@@ -16,7 +16,7 @@ public class ArticleController {
     public ArticleController(ArticleService articleService) {
         this.articleService = articleService;
     }
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "http://localhost:63342")
     @GetMapping({"/", "/index"})
     @ResponseBody
     public ResponseEntity<?> getAllArticles(Pageable page, String heading) {
@@ -24,7 +24,7 @@ public class ArticleController {
                 ok(articleService.getAllArticles(page, heading));
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "http://localhost:63342")
     @PostMapping("/upload")
     public ResponseEntity<?> uploadFile(@RequestParam("file") MultipartFile file,
                                         @RequestParam("heading") String heading) throws IOException {

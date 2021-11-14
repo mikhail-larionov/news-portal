@@ -73,9 +73,8 @@ public class ArticleServiceImpl implements ArticleService {
     }
 
     private Article getArticleFromZip(MultipartFile file, String heading) throws IOException {
-        try (InputStream is = new ByteArrayInputStream(file.getBytes());
-             ZipInputStream zipInputStream = new ZipInputStream(is)) {
-            ZipEntry entry;
+        InputStream is = new ByteArrayInputStream(file.getBytes());
+             ZipInputStream zipInputStream = new ZipInputStream(is);            ZipEntry entry;
             int numberOfFiles = 0;
             String title = null;
             String content = null;
@@ -93,7 +92,7 @@ public class ArticleServiceImpl implements ArticleService {
             }
             return new Article(null, title, content, heading);
         }
-    }
+
 
     private String getTitle(Scanner scanner) {
         if (scanner.hasNextLine()) {
